@@ -166,12 +166,9 @@ st.markdown(
     """
 <div class="tracker-card">
   <div class="tracker-title">
-    <span>📚 フランス語レッスン 100 マストラッカー</span>
-    <span class="badge-soft">B1 までの道のり</span>
+    <span>📚 Mon parcours de 100 leçons de français</span>
+    <span class="badge-soft">Objectif : niveau B1</span>
   </div>
-  <p class="tracker-sub">
-    週とか日は気にせず、レッスンを受けたら 1 マス塗っていくだけのやつ。
-  </p>
 </div>
 """,
     unsafe_allow_html=True,
@@ -184,8 +181,8 @@ col1, col2 = st.columns([2, 1])
 with col1:
     st.markdown(
         f"""
-**いまの進捗：**  
-<strong class="big-number">{current_count}</strong> / {MAX_LESSONS} レッスン
+**Progression actuelle：**  
+<strong class="big-number">{current_count}</strong> / {MAX_LESSONS} leçons
 """,
         unsafe_allow_html=True,
     )
@@ -193,21 +190,20 @@ with col1:
 with col2:
     st.markdown(
         f"""
-**B1 まであと：**  
-<b class="b1-label">{remaining}</b> レッスン
+**Avant le niveau B1：**  
+<b class="b1-label">{remaining}</b> leçons
 """,
         unsafe_allow_html=True,
     )
 
 if current_count >= MAX_LESSONS:
     st.success("🎉 100 マス全部埋まった！B1 レベル到達おめでとう！！")
-else:
-    st.info("マイペースで OK。空白マスがあっても全然いい。")
+
 
 st.write("")
 
 # ====== 100 マスグリッド ======
-st.markdown("### 🎨 100 マスボード")
+st.markdown("### 🎨 Mon tableau aux 100 cases")
 
 def build_grid_html(df):
     cells_html = ""
